@@ -20,4 +20,7 @@ let poke2: PokemonDTO = {
     age: 18
 }
 
-console.log(pokemon, poke2)
+export const cokemones: PokemonDTO[] = [];
+cokemones.push(pokemon, poke2);
+
+console.log(cokemones)

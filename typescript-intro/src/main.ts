@@ -2,7 +2,7 @@ import './style.css'
 import typescriptLogo from './typescript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.ts'
-import { pokemon, pokemonIds } from './bases/02-objects.ts'
+import { cokemones, pokemon} from './bases/02-objects.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
@@ -16,6 +16,9 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <div class="card">
       <button id="counter" type="button"></button>
     </div>
+    <ul>
+    ${cokemones.map((c) => `<li>${c.name} | ${c.health}</li>`)}
+    </ul>
     <p class="read-the-docs">
       Click on the Vite and TypeScript logos to learn more
     </p>
