@@ -52,4 +52,4 @@ export const ricardo = new Pokemon(999, "Ricardo", "Fuego")
 
 console.log(ricardo.scream())
 console.log(ricardo.speak("gil"))
-console.log(ricardo.getMoves())
+console.log(await ricardo.getMoves())
