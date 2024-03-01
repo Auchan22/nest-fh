@@ -1,3 +1,6 @@
+import { PokemonResponse } from "@/interfaces/PokemonResponse.interface";
+import axios from "axios";
+
 interface PokemonI {
     name: string;
     tipo: string;
@@ -37,9 +40,16 @@ export class Pokemon implements PokemonI {
     public speak(t: string): string {
         return `${this.getName} dice: ${t}`
     }
+
+    async getMoves() {
+        let {data} = await axios.get<PokemonResponse>("https://pokeapi.co/api/v2/pokemon/4");
+
+        return data.moves
+    }
 }
 
 export const ricardo = new Pokemon(999, "Ricardo", "Fuego")
 
 console.log(ricardo.scream())
 console.log(ricardo.speak("gil"))
+console.log(ricardo.getMoves())
